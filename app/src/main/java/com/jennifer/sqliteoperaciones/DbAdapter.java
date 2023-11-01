@@ -16,7 +16,7 @@ public class DbAdapter {
     public long insertarDatos(String usuario, String password){
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contenidoValores = new ContentValues();
-        contenidoValores.put(dBHelper.NAME,usuario);
+        contenidoValores.put(dBHelper.NAME, usuario);
         contenidoValores.put(dBHelper.MyPASSWORD, password);
         long id = db.insert(dBHelper.TABLE_NAME,null,contenidoValores);
         return id;
@@ -29,8 +29,8 @@ public class DbAdapter {
         private static final String UID = "_id";//Columna I (Primary Key - Clave Primaria)
         private static final String NAME = "Nombre";//Columna II
         private static final String MyPASSWORD = "Password";//Columna III
-        private static final String CREATE_TABLE = "CREATE TABLE" + TABLE_NAME +
-                " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+ NAME+ " VARCHAR(255), "+MyPASSWORD+" VARCHAR(255));";
+        private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
+                " ("+UID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+ NAME + " VARCHAR(255), " +MyPASSWORD+ " VARCHAR(255));";
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS" + TABLE_NAME;
         private Context context;
         public dBHelper (Context contextRecibido){
