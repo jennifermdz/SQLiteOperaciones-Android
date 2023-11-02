@@ -40,4 +40,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void verDatos(View view){
+        String datos = helper.getData();
+        mensaje.aviso(this, datos);
+    }
 }
