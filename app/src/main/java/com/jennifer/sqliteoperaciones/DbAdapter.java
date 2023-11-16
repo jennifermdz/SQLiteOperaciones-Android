@@ -36,13 +36,14 @@ public class DbAdapter {
         }
         return buffer.toString();
     }
-     public updateName(String oldName, String newName){
+     public int updateName(String oldName, String newName){
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contenedorValores = new ContentValues();
         contenedorValores.put(dBHelper.NAME, newName);
         String []whereArgs = {oldName};
         int count = db.update(dBHelper.TABLE_NAME, contenedorValores, dBHelper.NAME + " = ? ", whereArgs);
         return count;
+
      }
       public int delete(String name){
           SQLiteDatabase db = helper.getWritableDatabase();
